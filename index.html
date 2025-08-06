@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gọi Món - Quán Ăn</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="header">
+    <h1>🍽️ PU Bakery</h1>
+  </div>
+
+  <div id="name-popup" class="popup">
+    <div class="popup-content">
+      <h2>Xin chào! Vui lòng cho PU xin tên của quý khách</h2>
+      <input type="text" id="nameInput" placeholder="Tên của quý khách là" />
+      <button onclick="confirmName()">Bắt đầu gọi món</button>
+    </div>
+  </div>
+
+  <div id="menu-section" style="display: none;">
+    <h2>📝 Chọn Món</h2>
+
+    <h3>Bánh Cuốn</h3>
+    <div class="product-list">
+      <div class="product">
+        <img src="/data/bánh_cuốn_trứng.jpg" alt="Bánh cuốn trứng" />
+        <p>Bánh cuốn trứng</p>
+        <button onclick="addToCart('Bánh cuốn trứng nhỏ', 25000)">Nhỏ - 25k</button>
+        <button onclick="addToCart('Bánh cuốn trứng lớn', 35000)">Lớn - 35k</button>
+      </div>
+      <div class="product">
+        <img src="/data/bánh_ướt.jpg" alt="Bánh cuốn ướt" />
+        <p>Bánh cuốn ướt</p>
+        <button onclick="addToCart('Bánh ướt nhỏ', 20000)">Nhỏ - 20k</button>
+        <button onclick="addToCart('Bánh ướt lớn', 25000)">Lớn - 25k</button>
+      </div>
+    </div>
+
+    <h3>Bánh Tráng</h3>
+    <div class="product-list">
+      <div class="product">
+        <img src="/data/bánh tráng trộn truyền thống.jpg" alt="Truyền thống" />
+        <p>Truyền thống</p>
+        <button onclick="addToCart('Truyền thống nhỏ', 10000)">Nhỏ - 10k</button>
+        <button onclick="addToCart('Truyền thống lớn', 20000)">Lớn - 20k</button>
+      </div>
+      <div class="product">
+        <img src="/data/bánh tráng trộn khô bò.jpg" alt="Khô bò" />
+        <p>Khô bò</p>
+        <button onclick="addToCart('Khô bò nhỏ', 25000)">Nhỏ - 25k</button>
+        <button onclick="addToCart('Khô bò lớn', 30000)">Lớn - 30k</button>
+      </div>
+    </div>
+
+    <h3>Nước Uống</h3>
+    <div class="product-list">
+      <div class="product">
+        <img src="/data/trà đá.jpg" alt="Trà đá" />
+        <p>Trà đá - 5k</p>
+        <button onclick="addToCart('Trà đá', 5000)">Chọn</button>
+      </div>
+      <div class="product">
+        <img src="/data/cafe sữa.jpg" alt="Cafe sữa" />
+        <p>Cafe sữa - 13k</p>
+        <button onclick="addToCart('Cafe sữa', 13000)">Chọn</button>
+      </div>
+      <div class="product">
+        <img src="/data/bac siu.jpg" alt="Bạc sỉu" />
+        <p>Bạc sỉu - 15k</p>
+        <button onclick="addToCart('Bạc sỉu', 15000)">Chọn</button>
+      </div>
+      <div class="product">
+        <img src="/data/nuoc ngot.jpg" alt="Nước ngọt" />
+        <p>Nước ngọt - 20k</p>
+        <button onclick="addToCart('Nước ngọt', 20000)">Chọn</button>
+      </div>
+    </div>
+
+    <h2>🛒 Giỏ Hàng</h2>
+    <ul id="cart"></ul>
+    <p id="total">Tổng: 0đ</p>
+    <button onclick="submitOrder()">Gửi Đơn</button>
+  </div>
+
+  <div id="toast" class="toast">Thông báo</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
